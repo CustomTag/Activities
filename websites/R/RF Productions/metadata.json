@@ -1,0 +1,26 @@
+{
+  "name": "RF Music",
+  "$schema": "https://docs.premid.app/schema.json",
+  "description": "Show what you're vibing to on RF Productions Music!",
+  "version": "1.0.1",
+  "author": "RF Productions Team",
+  "icon": "rf_logo_main", 
+  "allowStreaming": true,
+  "url": "rfproductionshq.com", // Main domain
+  "regexUrl": ["^https?://rfproductionshq\\.com/radio(/.*)?$"], // Specific path for the radio
+  "service": {
+      "name": "RF Music",
+      "script": "presence.ts"
+  },
+  "media": {
+    "condition": "window.rfMusicPlayerStatus && window.rfMusicPlayerStatus.isPlaying && window.rfMusicPlayerStatus.title && window.rfMusicPlayerStatus.title !== 'Nothing playing'",
+    "song": "window.rfMusicPlayerStatus.title",
+    "artist": "window.rfMusicPlayerStatus.artist",
+    "currentTime": "window.rfMusicPlayerStatus.currentTime",
+    "duration": "window.rfMusicPlayerStatus.duration",
+    "albumArt": "window.rfMusicPlayerStatus.albumArt",
+    "url": "window.rfMusicPlayerStatus.sourceOriginalUrl"
+  },
+  "tags": ["music", "edm", "hardstyle", "radio", "rf productions", "rfp"],
+  "supportUrl": "https://discord.gg/rfproductions"
+}
